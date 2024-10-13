@@ -139,7 +139,13 @@ class TestCalculatorDegree(unittest.TestCase):
     def test_deg_pos(self):
         self.assertEqual(self.calculator.degree(2, 3), 8)
 
-    def test_deg_zero(self):
+    def test_deg_zero_pos(self):
+        self.assertEqual(self.calculator.degree(0, 2), 0)
+
+    def test_deg_zero_neg(self):
+        self.assertRaises(ZeroDivisionError, self.calculator.degree, 0, -1)
+
+    def test_deg_pos_zero(self):
         self.assertEqual(self.calculator.degree(2, 0), 1)
 
     def test_deg_pos_neg(self):
